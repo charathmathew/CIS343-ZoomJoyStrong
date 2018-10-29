@@ -1,5 +1,6 @@
 %{
   #include <stdio.h>
+  int lineNum = 1;
 %}
 
 %%
@@ -13,8 +14,9 @@ RECTANGLE         {printf("RECTANGLE\n");}
 SET_COLOR         {printf("SET COLOR\n");}
 [0-9]+            {printf("INT\n");}
 [0-9]+?\.[0-9]+   {printf("FLOAT\n");}
-[\t | " " | \n]   ;
-.                 {printf("UNRECOGNIZED TOKEN\n");}
+[\t | " "]   ;
+\n                {lineNum++;}
+.                 {printf("UNRECOGNIZED TOKEN - %s on line %d\n", yytext, lineNum);}
 %%
 
 int main(int argc, char** argv){
