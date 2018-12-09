@@ -1,7 +1,10 @@
 %{
   #include <stdio.h>
+  #include "zoomjoystrong.tab.h"
   int lineNum = 1;
 %}
+
+%option noyywrap
 
 %%
 
@@ -19,7 +22,3 @@ SET_COLOR         {printf("SET COLOR\n");}
 .                 {printf("UNRECOGNIZED TOKEN - %s on line %d\n", yytext, lineNum);}
 %%
 
-int main(int argc, char** argv){
-  yylex();
-  return 0;
-}
