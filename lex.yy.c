@@ -322,6 +322,9 @@ void yyfree ( void *  );
 #define YY_AT_BOL() (YY_CURRENT_BUFFER_LVALUE->yy_at_bol)
 
 /* Begin user sect3 */
+
+#define yywrap() (/*CONSTCOND*/1)
+#define YY_SKIP_YYWRAP
 typedef flex_uint8_t YY_CHAR;
 
 FILE *yyin = NULL, *yyout = NULL;
@@ -360,13 +363,13 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[50] =
+static const flex_int16_t yy_accept[49] =
     {   0,
-        0,    0,   14,   12,   10,   11,   12,    8,    2,   12,
-       12,   12,   12,   12,   12,    9,    0,    8,    0,    0,
-        0,    0,    0,    0,    0,    1,    0,    0,    0,    0,
-        0,    4,    0,    0,    0,    0,    3,    0,    0,    5,
-        0,    0,    0,    0,    0,    0,    6,    7,    0
+        0,    0,   14,   12,   10,   11,    8,    2,   12,   12,
+       12,   12,   12,   12,    0,    8,    0,    0,    0,    0,
+        0,    0,    9,    0,    1,    0,    0,    0,    0,    0,
+        4,    0,    0,    0,    0,    3,    0,    0,    5,    0,
+        0,    0,    0,    0,    0,    6,    7,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -407,46 +410,46 @@ static const YY_CHAR yy_meta[21] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[50] =
+static const flex_int16_t yy_base[49] =
     {   0,
-        0,    0,   58,   59,   59,   59,   52,   17,   59,   44,
-       41,   42,   38,   42,   41,   45,   44,   19,   31,   38,
-       32,   33,   36,   24,   34,   59,   31,   26,   20,   18,
-       24,   59,   17,   28,   26,   23,   59,   18,   16,   59,
-       19,   16,   15,   12,   16,    8,   59,   59,   59
+        0,    0,   57,   58,   58,   58,   17,   58,   44,   41,
+       42,   38,   42,   41,   45,   19,   32,   39,   33,   34,
+       37,   25,   38,   34,   58,   31,   26,   20,   18,   24,
+       58,   17,   28,   26,   23,   58,   18,   16,   58,   19,
+       16,   15,   12,   16,    8,   58,   58,   58
     } ;
 
-static const flex_int16_t yy_def[50] =
+static const flex_int16_t yy_def[49] =
     {   0,
-       49,    1,   49,   49,   49,   49,   49,   49,   49,   49,
-       49,   49,   49,   49,   49,   49,   49,   49,   49,   49,
-       49,   49,   49,   49,   49,   49,   49,   49,   49,   49,
-       49,   49,   49,   49,   49,   49,   49,   49,   49,   49,
-       49,   49,   49,   49,   49,   49,   49,   49,    0
+       48,    1,   48,   48,   48,   48,   48,   48,   48,   48,
+       48,   48,   48,   48,   48,   48,   48,   48,   48,   48,
+       48,   48,   48,   48,   48,   48,   48,   48,   48,   48,
+       48,   48,   48,   48,   48,   48,   48,   48,   48,   48,
+       48,   48,   48,   48,   48,   48,   48,    0
     } ;
 
-static const flex_int16_t yy_nxt[80] =
+static const flex_int16_t yy_nxt[79] =
     {   0,
-        4,    5,    6,    7,    8,    9,    4,   10,    4,   11,
-        4,    4,   12,    4,    4,   13,   14,   15,    4,    4,
-       17,   18,   17,   18,   48,   47,   46,   45,   44,   43,
-       42,   41,   40,   39,   38,   37,   36,   35,   34,   33,
-       32,   31,   30,   29,   28,   27,   26,   25,   16,   16,
-       24,   23,   22,   21,   20,   19,   16,   49,    3,   49,
-       49,   49,   49,   49,   49,   49,   49,   49,   49,   49,
-       49,   49,   49,   49,   49,   49,   49,   49,   49
+        4,    5,    6,    4,    7,    8,    4,    9,    4,   10,
+        4,    4,   11,    4,    4,   12,   13,   14,    4,    4,
+       15,   16,   15,   16,   47,   46,   45,   44,   43,   42,
+       41,   40,   39,   38,   37,   36,   35,   34,   33,   32,
+       31,   30,   23,   29,   28,   27,   26,   25,   24,   23,
+       22,   21,   20,   19,   18,   17,   48,    3,   48,   48,
+       48,   48,   48,   48,   48,   48,   48,   48,   48,   48,
+       48,   48,   48,   48,   48,   48,   48,   48
     } ;
 
-static const flex_int16_t yy_chk[80] =
+static const flex_int16_t yy_chk[79] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        8,    8,   18,   18,   46,   45,   44,   43,   42,   41,
-       39,   38,   36,   35,   34,   33,   31,   30,   29,   28,
-       27,   25,   24,   23,   22,   21,   20,   19,   17,   16,
-       15,   14,   13,   12,   11,   10,    7,    3,   49,   49,
-       49,   49,   49,   49,   49,   49,   49,   49,   49,   49,
-       49,   49,   49,   49,   49,   49,   49,   49,   49
+        7,    7,   16,   16,   45,   44,   43,   42,   41,   40,
+       38,   37,   35,   34,   33,   32,   30,   29,   28,   27,
+       26,   24,   23,   22,   21,   20,   19,   18,   17,   15,
+       14,   13,   12,   11,   10,    9,    3,   48,   48,   48,
+       48,   48,   48,   48,   48,   48,   48,   48,   48,   48,
+       48,   48,   48,   48,   48,   48,   48,   48
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -463,12 +466,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "zjs.lex"
-#line 2 "zjs.lex"
+#line 1 "zoomjoystrong.lex"
+#line 2 "zoomjoystrong.lex"
   #include <stdio.h>
+  #include <stdlib.h>
+  #include "zoomjoystrong.tab.h"
   int lineNum = 1;
-#line 471 "lex.yy.c"
-#line 472 "lex.yy.c"
+#line 476 "lex.yy.c"
+#line 477 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -685,10 +690,10 @@ YY_DECL
 		}
 
 	{
-#line 6 "zjs.lex"
+#line 10 "zoomjoystrong.lex"
 
 
-#line 692 "lex.yy.c"
+#line 697 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -715,13 +720,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 50 )
+				if ( yy_current_state >= 49 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 59 );
+		while ( yy_base[yy_current_state] != 58 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -747,71 +752,71 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 8 "zjs.lex"
-{printf("END\n");}
+#line 12 "zoomjoystrong.lex"
+{return END;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 9 "zjs.lex"
-{printf("END OF STATEMENT\n");}
+#line 13 "zoomjoystrong.lex"
+{return END_STATEMENT;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "zjs.lex"
-{printf("POINT\n");}
+#line 14 "zoomjoystrong.lex"
+{return POINT;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 11 "zjs.lex"
-{printf("LINE\n");}
+#line 15 "zoomjoystrong.lex"
+{return LINE;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 12 "zjs.lex"
-{printf("CIRCLE\n");}
+#line 16 "zoomjoystrong.lex"
+{return CIRCLE;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 13 "zjs.lex"
-{printf("RECTANGLE\n");}
+#line 17 "zoomjoystrong.lex"
+{return RECTANGLE;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 14 "zjs.lex"
-{printf("SET COLOR\n");}
+#line 18 "zoomjoystrong.lex"
+{return SET_COLOR;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 15 "zjs.lex"
-{printf("INT\n");}
+#line 19 "zoomjoystrong.lex"
+{yylval.intVal = atoi(yytext); return INT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 16 "zjs.lex"
-{printf("FLOAT\n");}
+#line 20 "zoomjoystrong.lex"
+{yylval.floatVal = atoi(yytext); return FLOAT;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 17 "zjs.lex"
+#line 21 "zoomjoystrong.lex"
 ;
 	YY_BREAK
 case 11:
 /* rule 11 can match eol */
 YY_RULE_SETUP
-#line 18 "zjs.lex"
+#line 22 "zoomjoystrong.lex"
 {lineNum++;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 19 "zjs.lex"
+#line 23 "zoomjoystrong.lex"
 {printf("UNRECOGNIZED TOKEN - %s on line %d\n", yytext, lineNum);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 20 "zjs.lex"
+#line 24 "zoomjoystrong.lex"
 ECHO;
 	YY_BREAK
-#line 815 "lex.yy.c"
+#line 820 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1108,7 +1113,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 50 )
+			if ( yy_current_state >= 49 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1136,11 +1141,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 50 )
+		if ( yy_current_state >= 49 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 49);
+	yy_is_jam = (yy_current_state == 48);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1816,7 +1821,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 20 "zjs.lex"
+#line 24 "zoomjoystrong.lex"
 
 
 int main(int argc, char** argv){
