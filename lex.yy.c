@@ -1,5 +1,5 @@
 
-#line 2 "lex.yy.c"
+#line 3 "lex.yy.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -380,13 +380,13 @@ static const YY_CHAR yy_ec[256] =
         1,    2,    1,    2,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    4,    1,    5,    5,    5,
         5,    5,    5,    5,    5,    5,    5,    1,    6,    1,
-        1,    1,    1,    1,    7,    1,    8,    9,   10,    1,
-       11,    1,   12,    1,    1,   13,    1,   14,   15,   16,
-        1,   17,   18,   19,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,   20,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    7,    1,    8,    1,    9,   10,
 
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+       11,    1,   12,    1,   13,    1,    1,   14,    1,   15,
+       16,   17,    1,   18,   19,   20,    1,    1,    1,    1,
         1,    1,    1,    2,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -412,11 +412,11 @@ static const YY_CHAR yy_meta[21] =
 
 static const flex_int16_t yy_base[50] =
     {   0,
-        0,    0,   58,   59,   59,   59,   52,   17,   59,   44,
-       41,   42,   38,   42,   41,   45,   44,   19,   31,   38,
-       32,   33,   36,   24,   34,   59,   31,   26,   20,   18,
-       24,   59,   17,   28,   26,   23,   59,   18,   16,   59,
-       19,   16,   15,   12,   16,    8,   59,   59,   59
+        0,    0,   58,   59,   59,   59,   52,   17,   59,   43,
+       40,   41,   37,   41,   40,   45,   44,   19,   30,   37,
+       31,   32,   35,   23,   33,   59,   30,   25,   19,   31,
+       23,   59,   16,   27,   25,   22,   59,   17,   15,   59,
+       18,   15,   14,   11,   15,    7,   59,   59,   59
     } ;
 
 static const flex_int16_t yy_def[50] =
@@ -430,8 +430,8 @@ static const flex_int16_t yy_def[50] =
 
 static const flex_int16_t yy_nxt[80] =
     {   0,
-        4,    5,    6,    7,    8,    9,    4,   10,    4,   11,
-        4,    4,   12,    4,    4,   13,   14,   15,    4,    4,
+        4,    5,    6,    7,    8,    9,    4,    4,   10,    4,
+       11,    4,    4,   12,    4,    4,   13,   14,   15,    4,
        17,   18,   17,   18,   48,   47,   46,   45,   44,   43,
        42,   41,   40,   39,   38,   37,   36,   35,   34,   33,
        32,   31,   30,   29,   28,   27,   26,   25,   16,   16,
@@ -471,8 +471,8 @@ char *yytext;
   #include <stdio.h>
   #include "zoomjoystrong.tab.h"
   int lineNum = 1;
-#line 474 "lex.yy.c"
 #line 475 "lex.yy.c"
+#line 476 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -692,7 +692,7 @@ YY_DECL
 #line 9 "zoomjoystrong.lex"
 
 
-#line 695 "lex.yy.c"
+#line 696 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -752,47 +752,47 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 11 "zoomjoystrong.lex"
-{printf("END\n");}
+{ return END;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 12 "zoomjoystrong.lex"
-{printf("END OF STATEMENT\n");}
+{ return END_STATEMENT;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 13 "zoomjoystrong.lex"
-{printf("POINT\n");}
+{ return POINT;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 14 "zoomjoystrong.lex"
-{printf("LINE\n");}
+{ return LINE;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 15 "zoomjoystrong.lex"
-{printf("CIRCLE\n");}
+{ return CIRCLE;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 16 "zoomjoystrong.lex"
-{printf("RECTANGLE\n");}
+{ return RECTANGLE;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 17 "zoomjoystrong.lex"
-{printf("SET COLOR\n");}
+{ return SET_COLOR;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 18 "zoomjoystrong.lex"
-{printf("INT\n");}
+{ yylval.intVal=atoi(yytext); return INT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 19 "zoomjoystrong.lex"
-{printf("FLOAT\n");}
+{ yylval.floatVal=atof(yytext); return FLOAT;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
@@ -808,14 +808,14 @@ YY_RULE_SETUP
 case 12:
 YY_RULE_SETUP
 #line 22 "zoomjoystrong.lex"
-{printf("UNRECOGNIZED TOKEN - %s on line %d\n", yytext, lineNum);}
+{printf("\nUNRECOGNIZED TOKEN - %s on line %d\n", yytext, lineNum);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 23 "zoomjoystrong.lex"
 ECHO;
 	YY_BREAK
-#line 818 "lex.yy.c"
+#line 819 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1821,6 +1821,5 @@ void yyfree (void * ptr )
 #define YYTABLES_NAME "yytables"
 
 #line 23 "zoomjoystrong.lex"
-
 
 

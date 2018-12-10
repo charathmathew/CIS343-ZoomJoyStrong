@@ -8,17 +8,16 @@
 
 %%
 
-END               {printf("END\n");}
-;                 {printf("END OF STATEMENT\n");}
-POINT             {printf("POINT\n");}
-LINE              {printf("LINE\n");}
-CIRCLE            {printf("CIRCLE\n");}
-RECTANGLE         {printf("RECTANGLE\n");}
-SET_COLOR         {printf("SET COLOR\n");}
-[0-9]+            {printf("INT\n");}
-[0-9]+?\.[0-9]+   {printf("FLOAT\n");}
-[\t | " "]   ;
+end			        { return END;}
+;			            { return END_STATEMENT;}
+point			      { return POINT;}
+line 			      { return LINE;}
+circle		      { return CIRCLE;}
+rectangle	      { return RECTANGLE;}
+set_color	      { return SET_COLOR;}
+[0-9]+            { yylval.intVal=atoi(yytext); return INT;}
+[0-9]+?\.[0-9]+   { yylval.floatVal=atof(yytext); return FLOAT;}
+[\t | " "]        ;
 \n                {lineNum++;}
-.                 {printf("UNRECOGNIZED TOKEN - %s on line %d\n", yytext, lineNum);}
+.                 {printf("\nUNRECOGNIZED TOKEN - %s on line %d\n", yytext, lineNum);}
 %%
-

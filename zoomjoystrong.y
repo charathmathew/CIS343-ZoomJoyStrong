@@ -40,23 +40,45 @@ statement:  line
        ;
 
 line: LINE INT INT INT INT END_STATEMENT{
-      line($2,$3,$4,$5);
+      if($2 >= 0 && $2 <= WIDTH && $3 >= 0 && $3 <= HEIGHT){
+        line($2,$3,$4,$5);
+      }
+      else{
+        printf("Invalid line parameters\n");
+      }
       };
 
 point: POINT INT INT END_STATEMENT{
-       point($2,$3);
-      };
+       if($2 >= 0 && $2 <= WIDTH && $3 >= 0 && $3 <= HEIGHT) {
+        point($2,$3);
+       }
+       else{
+       printf("Invalid point parameters\n");
+       }
+       };
 
 circle: CIRCLE INT INT INT END_STATEMENT{
-        circle($2,$3,$4);
+        if($2 >= 0 && $2 <= WIDTH && $3 >= 0 && $3 <= HEIGHT){
+          circle($2,$3,$4);
+        }else{
+          printf("Invalid circle parameters\n");
+        }
         };
 
 rectangle: RECTANGLE INT INT INT INT END_STATEMENT{
-           rectangle($2,$3,$4,$5);
+           if($2 >= 0 && $2 <= WIDTH && $3 >= 0 && $3 <= HEIGHT){
+              rectangle($2,$3,$4,$5);
+           }else{
+              printf("Invalid rectangle parameters\n");
+           }
            };
 
 set_color: SET_COLOR INT INT INT END_STATEMENT{
-           set_color($2,$3,$4);
+           if($2 >= 0 && $2 <= 255 && $3 >= 0 && $3 <= 255 && $4 >= 0 && $4 <= 255){
+              set_color($2,$3,$4);
+           }else{
+              printf("Invalid color parameters\n");
+           }
            };
 
 end: END END_STATEMENT{

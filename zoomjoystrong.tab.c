@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.0.5.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
 /* Bison implementation for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018 Free Software Foundation, Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "3.0.5"
+#define YYBISON_VERSION "3.0.4"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -444,7 +444,7 @@ static const yytype_uint8 yytranslate[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    27,    27,    30,    31,    34,    35,    36,    37,    38,
-      39,    42,    46,    50,    54,    58,    62
+      39,    42,    51,    60,    68,    76,    84
 };
 #endif
 
@@ -917,7 +917,6 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
       case N:                               \
         yyformat = S;                       \
       break
-    default: /* Avoid compiler warnings. */
       YYCASE_(0, YY_("syntax error"));
       YYCASE_(1, YY_("syntax error, unexpected %s"));
       YYCASE_(2, YY_("syntax error, unexpected %s, expecting %s"));
@@ -1234,56 +1233,78 @@ yyreduce:
   switch (yyn)
     {
         case 11:
-#line 42 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 42 "zoomjoystrong.y" /* yacc.c:1646  */
     {
-      line((yyvsp[-4].intVal),(yyvsp[-3].intVal),(yyvsp[-2].intVal),(yyvsp[-1].intVal));
+      if((yyvsp[-4].intVal) >= 0 && (yyvsp[-4].intVal) <= WIDTH && (yyvsp[-3].intVal) >= 0 && (yyvsp[-3].intVal) <= HEIGHT){
+        line((yyvsp[-4].intVal),(yyvsp[-3].intVal),(yyvsp[-2].intVal),(yyvsp[-1].intVal));
       }
-#line 1242 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+      else{
+        printf("Invalid line parameters\n");
+      }
+      }
+#line 1246 "zoomjoystrong.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 46 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 51 "zoomjoystrong.y" /* yacc.c:1646  */
     {
-       point((yyvsp[-2].intVal),(yyvsp[-1].intVal));
-      }
-#line 1250 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+       if((yyvsp[-2].intVal) >= 0 && (yyvsp[-2].intVal) <= WIDTH && (yyvsp[-1].intVal) >= 0 && (yyvsp[-1].intVal) <= HEIGHT) {
+        point((yyvsp[-2].intVal),(yyvsp[-1].intVal));
+       }
+       else{
+       printf("Invalid point parameters\n");
+       }
+       }
+#line 1259 "zoomjoystrong.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 50 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 60 "zoomjoystrong.y" /* yacc.c:1646  */
     {
-        circle((yyvsp[-3].intVal),(yyvsp[-2].intVal),(yyvsp[-1].intVal));
+        if((yyvsp[-3].intVal) >= 0 && (yyvsp[-3].intVal) <= WIDTH && (yyvsp[-2].intVal) >= 0 && (yyvsp[-2].intVal) <= HEIGHT){
+          circle((yyvsp[-3].intVal),(yyvsp[-2].intVal),(yyvsp[-1].intVal));
+        }else{
+          printf("Invalid circle parameters\n");
         }
-#line 1258 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+        }
+#line 1271 "zoomjoystrong.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 54 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 68 "zoomjoystrong.y" /* yacc.c:1646  */
     {
-           rectangle((yyvsp[-4].intVal),(yyvsp[-3].intVal),(yyvsp[-2].intVal),(yyvsp[-1].intVal));
+           if((yyvsp[-4].intVal) >= 0 && (yyvsp[-4].intVal) <= WIDTH && (yyvsp[-3].intVal) >= 0 && (yyvsp[-3].intVal) <= HEIGHT){
+              rectangle((yyvsp[-4].intVal),(yyvsp[-3].intVal),(yyvsp[-2].intVal),(yyvsp[-1].intVal));
+           }else{
+              printf("Invalid rectangle parameters\n");
            }
-#line 1266 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+           }
+#line 1283 "zoomjoystrong.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 58 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 76 "zoomjoystrong.y" /* yacc.c:1646  */
     {
-           set_color((yyvsp[-3].intVal),(yyvsp[-2].intVal),(yyvsp[-1].intVal));
+           if((yyvsp[-3].intVal) >= 0 && (yyvsp[-3].intVal) <= 255 && (yyvsp[-2].intVal) >= 0 && (yyvsp[-2].intVal) <= 255 && (yyvsp[-1].intVal) >= 0 && (yyvsp[-1].intVal) <= 255){
+              set_color((yyvsp[-3].intVal),(yyvsp[-2].intVal),(yyvsp[-1].intVal));
+           }else{
+              printf("Invalid color parameters\n");
            }
-#line 1274 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+           }
+#line 1295 "zoomjoystrong.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 62 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 84 "zoomjoystrong.y" /* yacc.c:1646  */
     {
      finish();
      exit(1);
      }
-#line 1283 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1304 "zoomjoystrong.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1287 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1308 "zoomjoystrong.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1511,7 +1532,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 66 "zoomjoystrong.y" /* yacc.c:1907  */
+#line 88 "zoomjoystrong.y" /* yacc.c:1906  */
 
 
 int main(int argc, char** argv){
