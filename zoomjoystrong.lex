@@ -17,7 +17,7 @@ rectangle	            { return RECTANGLE;}
 set_color	            { return SET_COLOR;}
 [0-9]+                { yylval.intVal=atoi(yytext); return INT;}
 [0-9]+?\.[0-9]+       { yylval.floatVal=atof(yytext); return FLOAT;}
-[\t | ]               ;
+[ \t]                 ;
 \n                    { lineNum++;}
-.                     {printf("\nUNRECOGNIZED TOKEN - %s on line %d\n", yytext, lineNum);}
+.                     ;
 %%
